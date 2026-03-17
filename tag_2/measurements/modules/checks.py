@@ -16,7 +16,8 @@ def check_voltage(voltage):
         return "Spannung im Normalbereich"
     else:
         return "Spannung zu hoch"
-    
+
+# Für die Zukunft.
 def check_current(current):
     pass
 

@@ -1,6 +1,7 @@
 """
-Ein verrauschtes Sensorsignal soll gefiltert und animiert dargestellt werden (Anfangszustand)
-Dieses Signal wollen wir mit einem Butterworth Tiefpassfilter filtern.
+Ein verrauschtes Sensorsignal (Sinus) soll gefiltert und animiert dargestellt werden (Anfangszustand)
+
+Dieses Sinus-Signal wollen wir mit einem Butterworth Tiefpassfilter filtern.
 Nutze dafür das scipy modul
 """
 

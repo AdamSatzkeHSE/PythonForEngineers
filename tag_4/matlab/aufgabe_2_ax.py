@@ -34,31 +34,26 @@ noise = rng.normal(0, 0.2, len(t))
 signal_rauschen = signal + noise
 
 # Plotten
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(2, 1)
 
-print(type(ax))
+print(ax)
 
-ax.set_xlim(0, 10)
-ax.set_ylim(-2, 2)
+ax[0].set_xlim(0, 10)
+ax[0].set_ylim(-2, 2)
 
-ax.set_title("U(t) mit und ohne Rauschen")
-ax.set_xlabel("Zeit [s]")
-ax.set_ylabel("Spannung [V]")
+ax[0].set_title("U(t) ohne Rauschen")
+ax[0].set_xlabel("Zeit [s]")
+ax[0].set_ylabel("Spannung [V]")
 
-line1, = ax.plot([], [], label="Ohne Rauschen")
-line2, = ax.plot([], [], label="Mit Rauschen")
+ax[1].set_title("U(t) mit Rauschen")
+ax[1].set_xlabel("Zeit [s]")
+ax[1].set_ylabel("Spannung [V]")
 
-# Legende (Voraussetzung ax.plot())
-ax.legend()
-# Hintergrundsfarbe
-ax.set_facecolor("#c78c8c")
-# Grid
-ax.grid(True, linestyle="--", alpha=0.5)
-# Automatische Aufteilung
-fig.tight_layout()
-# Linien hervorheben
-ax.axhline(y=max(signal), color="black")
-ax.axvline(4, color="blue")
+ax[1].set_xlim(0, 10)
+ax[1].set_ylim(-2, 2)
+
+line1, = ax[0].plot([], [], label="Ohne Rauschen")
+line2, = ax[1].plot([], [], label="Mit Rauschen")
 
 def update(frame):
     line1.set_data(t[:frame], signal[:frame])

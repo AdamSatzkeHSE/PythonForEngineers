@@ -3,6 +3,7 @@ from matplotlib.animation import FuncAnimation
 
 import numpy as np
 import matplotlib.pyplot as plt
+from IPython.display import HTML
 
 t = np.linspace(0, 10, 100)
 
@@ -34,5 +35,5 @@ ani = FuncAnimation(
     frames=len(t),
     interval=50 # Zeit zwischen Frames in ms
 )
-
+HTML(ani.to_jshtml())
 plt.show()

@@ -64,6 +64,9 @@ def update(frame):
     line1.set_data(t[:frame], signal[:frame])
     line2.set_data(t[:frame], signal_rauschen[:frame])
 
+    # update braucht ein Rueckgabewert
+    return line1, line2
+
 ani = FuncAnimation(
     fig,
     update,
